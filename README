@@ -1,0 +1,123 @@
+Sisyphean Versioning 1.0.0
+
+Summary
+
+  Given a version number comprising dot-separated integers, that version
+  number must increase with each new version. When a component that is
+  not the rightmost is increased, all components to the right of it must
+  roll downhill to 0, like Sisyphus's boulder.
+
+Introduction
+
+  Since the beginning of time, humanity has assigned version numbers to
+  its pieces of software. This is sometimes useful, I guess. Existence
+  is a pit of despair, though.
+
+Sisyphean Versioning Specification (UphillVer)
+
+  The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+  "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+  document are to be interpreted as described in RFC 2119, which no one
+  has ever read and which no one will ever read.
+
+  1.  Software using Sisyphean Versioning MUST assign version numbers to
+      at least some of its releases. They MUST uniquely identify a
+      specific version of that software, and MUST NOT repeat, in case
+      you thought that having two "technically different" versions 1.0
+      was clever.
+
+  2.  Version numbers MUST be a sequence of nonnegative integers
+      separated by the "dot" or "period" character (this one inside
+      single quotes here: '.'). This makes them version strings more
+      than "numbers", really. No one cares, but specifications citing
+      RFC 2119 MUST be pedantic (pedantic note: this requirement is not
+      actually in RFC 2119).
+
+  3.  Version numbers MUST increase with each new version number assigned.
+      You MUST NOT try to weasel out of this by doing anything silly that
+      it's too hard to legislate against, like going through your VCS
+      history in reverse order and assigning them backwards. Be reasonable.
+
+  4.  Only one component of a version number MAY increase at any time.
+      For this item only, do not interpret MAY as described in RFC 2119,
+      but instead interpret it in the way RFC 2119 specifies that you
+      interpret the word MUST. That sentence would have been too awkward
+      if constructed to actually use one of the words
+      MUST/REQUIRED/SHALL.
+
+  5.  If a component of a version number that is not the rightmost
+      component is increased, all components to its right MUST decrease
+      to zero. This is the "Sisyphus rule" from which this specification
+      derives its name.
+
+  6.  If you add a component to the right hand side of a version number,
+      this will probably annoy people and confuse their brittle
+      automated tools, but it counts as increasing the new component,
+      except that you may "increase" it from nonexistence to zero. In
+      the RFC 2119 sense, you SHOULD NOT do this, but if you do it you
+      MUST follow the above.
+
+  7.  If you remove a component from the right hand side of a version
+      number, it counts as setting it to zero. You MUST do this only
+      when the Sisyphus rule requires that you set that component to
+      zero anyway. Apparently, this breaks people's brittle automated
+      tools. You MAY think of this as merely hiding trailing zero
+      components from the version string, if you like, but you MUST NOT
+      take this mental convenience as license to tax already-brittle
+      automated tools even further (to say nothing of humans) by e.g.
+      having both 3.0 and 3.0.0 versions or whatever clever trick you
+      just thought of.
+
+  8.  You MAY put other freeform stuff after the version number proper,
+      possibly separated by a '-' or something. You SHOULD NOT annoy
+      people by doing this too haphazardly. You MUST NOT change the
+      version number proper while messing with the freeform portion, and
+      it probably SHOULD disappear on the next "real" version update.
+
+  9.  One must imagine Sisyphus happy.
+
+Backus-Naur Form Grammar for Valid Sisyphean Versions
+
+  Look, let me get real with you for a moment here. This document is
+  clearly on the irreverent side, but it is not a "joke", and I don't
+  think it's inherently stupid for SemVer to provide a BNF grammar; it's
+  covering all its bases.
+
+  However, both SemVer (humorlessly, despite its "pit of despair" or
+  whatever) and this document (with poor attempts at humor) are trying
+  to specify rules about versioning strings that make them useful and
+  somewhat meaningful, not literally describe what a version string
+  looks like. I am not going to write a BNF or pseudo-BNF grammar here.
+  Sorry.
+
+FAQ
+
+  - Where is "One must imagine Sisyphus happy" from?
+
+    Camus' "The Myth of Sisyphus". In the original French, "Il faut
+    imaginer Sisyphe heureux".
+
+  - Why is this text file named README?
+
+    Because forge sites treat files named README specially.
+
+  - Why isn't this named README.md, or in Markdown?
+
+    I don't like Markdown.
+
+  - Should I prefix Git tags for versions with 'v' or not?
+
+    Junio does, and it's never wrong to do what Junio does.
+
+About
+
+  The author of this document wrote it. Contributors may have
+  contributed to it.
+
+  Please direct emails to Raymond E. Pasco <ray@ameretat.dev>.
+
+License
+
+  I mangled the ISC license to not refer to "software". I put the
+  mangled text in a file called LICENSE, because forge sites treat files
+  named LICENSE specially.
