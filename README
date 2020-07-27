@@ -43,7 +43,8 @@ Sisyphean Versioning Specification (UphillVer)
       but instead interpret it in the way RFC 2119 specifies that you
       interpret the word MUST. That sentence would have been too awkward
       if constructed to actually use one of the words
-      MUST/REQUIRED/SHALL.
+      MUST/REQUIRED/SHALL. The component that increases SHOULD simply be
+      incremented by one.
 
   5.  If a component of a version number that is not the rightmost
       component is increased, all components to its right MUST decrease
